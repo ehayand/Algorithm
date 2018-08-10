@@ -1,4 +1,4 @@
-package problem01197_최소_스패닝_트리;
+package problem01922_네트워크_연결;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,29 +8,25 @@ import java.util.List;
 import java.util.PriorityQueue;
 
 /**
- * Created by ehay@naver.com on 2018-07-29
+ * Created by ehay@naver.com on 2018-08-04
  * Blog : http://ehay.tistory.com
  * Github : http://github.com/ehayand
  */
 
 public class Main {
-
-    public static void main(String args[]) throws IOException {
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String temp[];
 
-        temp = br.readLine().split(" ");
-        int v = Integer.parseInt(temp[0]);
-        int e = Integer.parseInt(temp[1]);
+        int n = Integer.parseInt(br.readLine());
+        int m = Integer.parseInt(br.readLine());
 
-        boolean[] visit = new boolean[v];
-        List<Edge>[] list = new ArrayList[v];
+        boolean[] visit = new boolean[n];
+        List<Edge>[] list = new ArrayList[n];
 
-        for (int i = 0; i < v; i++) {
-            list[i] = new ArrayList();
-        }
+        for (int i = 0; i < n; i++) list[i] = new ArrayList();
 
-        for (int i = 0; i < e; i++) {
+        String[] temp;
+        for (int i = 0; i < m; i++) {
             temp = br.readLine().split(" ");
             int start = Integer.parseInt(temp[0]) - 1;
             int end = Integer.parseInt(temp[1]) - 1;
@@ -46,7 +42,7 @@ public class Main {
         PriorityQueue<Edge> pq = new PriorityQueue();
         visit[index] = true;
 
-        while (count < v - 1) {
+        while (count < n - 1) {
             for (Edge edge : list[index]) pq.offer(edge);
 
             while (!pq.isEmpty()) {
@@ -60,6 +56,7 @@ public class Main {
                 }
             }
         }
+
         System.out.println(ans);
     }
 
