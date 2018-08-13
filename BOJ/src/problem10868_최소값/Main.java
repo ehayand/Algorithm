@@ -13,10 +13,10 @@ import java.io.InputStreamReader;
 public class Main {
 
     static final int MAX_VALUE = 1000000001;
-    static int minSegment[];
+    static int[] minSegment;
     static int size = 1;
 
-    public static void main(String arg[]) throws IOException {
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
         int queryL, queryR, ans;
@@ -42,7 +42,8 @@ public class Main {
             ans = minQuery(queryL, queryR, 1, 1, size);
             sb.append(ans + "\n");
         }
-        System.out.println(sb.toString());
+
+        System.out.print(sb.toString());
     }
 
     public static int segmentFill(int nodeIndex) {

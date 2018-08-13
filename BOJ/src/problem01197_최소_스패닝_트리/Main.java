@@ -15,9 +15,9 @@ import java.util.PriorityQueue;
 
 public class Main {
 
-    public static void main(String args[]) throws IOException {
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String temp[];
+        String[] temp;
 
         temp = br.readLine().split(" ");
         int v = Integer.parseInt(temp[0]);
@@ -60,6 +60,7 @@ public class Main {
                 }
             }
         }
+
         System.out.println(ans);
     }
 

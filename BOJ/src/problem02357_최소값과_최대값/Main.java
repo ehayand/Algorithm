@@ -14,10 +14,10 @@ public class Main {
 
     static final int MAX_VALUE = 1000000001;
     static final int MIN_VALUE = 0;
-    static int minSegment[], maxSegment[];
+    static int[] minSegment, maxSegment;
     static int size = 1;
 
-    public static void main(String arg[]) throws IOException {
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
         int queryL, queryR, min, max;
@@ -47,7 +47,8 @@ public class Main {
             max = maxQuery(queryL, queryR, 1, 1, size);
             sb.append(min + " " + max + "\n");
         }
-        System.out.println(sb.toString());
+
+        System.out.print(sb.toString());
     }
 
     public static int minSegment(int nodeIndex) {

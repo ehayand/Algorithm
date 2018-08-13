@@ -12,7 +12,7 @@ import java.io.InputStreamReader;
 
 public class Main {
 
-    public static void main(String args[]) throws IOException {
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
         String[] temp;
@@ -28,6 +28,7 @@ public class Main {
 
             sb.append(n-1+"\n");
         }
+
         System.out.print(sb.toString());
     }
 }
