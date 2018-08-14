@@ -44,7 +44,7 @@ public class Fenwick {
             } else {
                 queryL = Integer.parseInt(temp[1]);
                 queryR = Integer.parseInt(temp[2]);
-                ans = Query(queryL, queryR);
+                ans = query(queryL, queryR);
                 sb.append(ans + "\n");
             }
         }
@@ -52,7 +52,7 @@ public class Fenwick {
         System.out.print(sb.toString());
     }
 
-    public static long Query(int index) {
+    public static long query(int index) {
         long sum = 0;
         while (index > 0) {
             sum += fenwick[index];
@@ -61,8 +61,8 @@ public class Fenwick {
         return sum;
     }
 
-    public static long Query(int queryL, int queryR) {
-        return Query(queryR) - Query(queryL - 1);
+    public static long query(int queryL, int queryR) {
+        return query(queryR) - query(queryL - 1);
     }
 
     public static void update(int index, long value) {
