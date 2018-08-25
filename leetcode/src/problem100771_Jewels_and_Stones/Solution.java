@@ -7,6 +7,7 @@ package problem100771_Jewels_and_Stones;
  */
 
 public class Solution {
+
     public static void main(String[] args) {
         Solution solution = new Solution();
 
