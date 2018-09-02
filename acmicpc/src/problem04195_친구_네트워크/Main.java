@@ -34,28 +34,17 @@ public class Main {
             while (f-- > 0) {
                 temp = br.readLine().split(" ");
 
-                if (!network.isEmpty()) {
-                    u = network.get(temp[0].trim());
-                    v = network.get(temp[1].trim());
-
-                    if (u == null) {
-                        network.put(temp[0], index);
-                        u = index++;
-                    }
-                    if (v == null) {
-                        network.put(temp[1], index);
-                        v = index++;
-                    }
-
-                    union(u, v);
-                } else {
-                    network.put(temp[0], index);
-                    u = index++;
-                    network.put(temp[1], index);
-                    v = index++;
-
-                    union(u, v);
+                if (!network.containsKey(temp[0])) {
+                    network.put(temp[0], index++);
                 }
+                if (!network.containsKey(temp[1])) {
+                    network.put(temp[1], index++);
+                }
+
+                u = network.get(temp[0]);
+                v = network.get(temp[1]);
+
+                union(u, v);
 
                 sb.append(count[find(u)]).append("\n");
             }
