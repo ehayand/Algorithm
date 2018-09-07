@@ -19,7 +19,7 @@ public class Main {
 
         int t = Integer.parseInt(br.readLine());
 
-        for (int test = 0; test < t; test++) {
+        while (t-- > 0) {
             temp = br.readLine().split(" ");
             int n = Integer.parseInt(temp[0]);
             int m = Integer.parseInt(temp[1]);
