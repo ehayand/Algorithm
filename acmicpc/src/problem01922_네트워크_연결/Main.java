@@ -27,7 +27,7 @@ public class Main {
         for (int i = 0; i < n; i++) list[i] = new ArrayList();
 
         String[] temp;
-        for (int i = 0; i < m; i++) {
+        while (m-- > 0) {
             temp = br.readLine().split(" ");
             int start = Integer.parseInt(temp[0]) - 1;
             int end = Integer.parseInt(temp[1]) - 1;

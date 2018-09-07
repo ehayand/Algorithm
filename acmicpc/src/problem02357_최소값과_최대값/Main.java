@@ -39,7 +39,7 @@ public class Main {
         minSegment(1);
         maxSegment(1);
 
-        for (int i = 0; i < m; i++) {
+        while (m-- > 0) {
             temp = br.readLine().split(" ");
             queryL = Integer.parseInt(temp[0]);
             queryR = Integer.parseInt(temp[1]);

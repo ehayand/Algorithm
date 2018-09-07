@@ -22,7 +22,7 @@ public class Main {
 
         int t = Integer.parseInt(br.readLine());
 
-        for (int test = 0; test < t; test++) {
+        while (t-- > 0) {
             st = new StringTokenizer(br.readLine());
             int n = Integer.parseInt(st.nextToken());
             int m = Integer.parseInt(st.nextToken());

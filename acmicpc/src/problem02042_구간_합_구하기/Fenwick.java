@@ -23,6 +23,7 @@ public class Fenwick {
         int n = Integer.parseInt(temp[0]);
         int m = Integer.parseInt(temp[1]);
         int k = Integer.parseInt(temp[2]);
+        int t = m + k;
 
         fenwick = new long[n + 1];
         inputArray = new long[n + 1];
@@ -32,7 +33,7 @@ public class Fenwick {
             update(i, inputArray[i]);
         }
 
-        for (int i = 0; i < m + k; i++) {
+        while (t-- > 0) {
             temp = br.readLine().split(" ");
             select = Integer.parseInt(temp[0]);
             if (select == 1) {

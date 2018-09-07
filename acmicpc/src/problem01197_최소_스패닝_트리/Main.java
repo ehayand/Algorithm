@@ -30,7 +30,7 @@ public class Main {
             list[i] = new ArrayList();
         }
 
-        for (int i = 0; i < e; i++) {
+        while (e-- > 0) {
             temp = br.readLine().split(" ");
             int start = Integer.parseInt(temp[0]) - 1;
             int end = Integer.parseInt(temp[1]) - 1;

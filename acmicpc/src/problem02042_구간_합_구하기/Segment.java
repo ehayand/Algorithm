@@ -24,7 +24,7 @@ public class Segment {
         int n = Integer.parseInt(temp[0]);
         int m = Integer.parseInt(temp[1]);
         int k = Integer.parseInt(temp[2]);
-
+        int t = m + k;
         while (n << 2 > size) size <<= 1;
 
         sumSegment = new long[size];
@@ -34,7 +34,8 @@ public class Segment {
 
         segmentFill(1);
 
-        for (int i = 0; i < m + k; i++) {
+
+        while (t-- > 0) {
             temp = br.readLine().split(" ");
             select = Integer.parseInt(temp[0]);
             if (select == 1) {
