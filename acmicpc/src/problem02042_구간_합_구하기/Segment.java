@@ -25,7 +25,7 @@ public class Segment {
         int m = Integer.parseInt(temp[1]);
         int k = Integer.parseInt(temp[2]);
         int t = m + k;
-        while (n << 2 > size) size <<= 1;
+        while (n << 1 > size) size <<= 1;
 
         sumSegment = new long[size];
         size >>= 1;
