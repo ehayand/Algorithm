@@ -35,7 +35,7 @@ public class Main {
             } else if ("size".equals(temp[0])) {
                 sb.append(size()).append("\n");
             } else {
-                sb.append(empty()).append("\n");
+                sb.append(empty() ? 1 : 0).append("\n");
             }
         }
 
@@ -47,22 +47,22 @@ public class Main {
     }
 
     static int pop() {
-        return empty() == 0 ? q[head++] : -1;
+        return empty() ? -1 : q[head++];
     }
 
     static int front() {
-        return empty() == 0 ? q[head] : -1;
+        return empty() ? -1 : q[head];
     }
 
     static int back() {
-        return empty() == 0 ? q[tail] : -1;
+        return empty() ? -1 : q[tail];
     }
 
     static int size() {
-        return empty() == 0 ? tail - head + 1 : 0;
+        return empty() ? 0 : tail - head + 1;
     }
 
-    static int empty() {
-        return head > tail ? 1 : 0;
+    static boolean empty() {
+        return head > tail ? true : false;
     }
 }
