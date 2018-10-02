@@ -11,10 +11,10 @@ import java.io.InputStreamReader;
  * Circular Queue
  */
 
-public class Main {
+public class Array {
 
     static final int size = 5001;
-    static int[] q = new int[size+1];
+    static int[] q = new int[size + 1];
     static int head = 0, tail;
 
     public static void main(String[] args) throws IOException {
@@ -24,17 +24,17 @@ public class Main {
         int n = Integer.parseInt(temp[0]);
         int m = Integer.parseInt(temp[1]);
 
-        for (int i = 1; i < n+1; i++) q[i] = i;
+        for (int i = 1; i < n + 1; i++) q[i] = i;
 
         tail = n;
 
         sb.append("<");
-        while(!isEmpty()){
-            for(int i=1; i<m; i++) push(pop());
+        while (!isEmpty()) {
+            for (int i = 1; i < m; i++) push(pop());
             sb.append(pop()).append(", ");
         }
 
-        sb.delete(sb.length()-2, sb.length()).append(">");
+        sb.delete(sb.length() - 2, sb.length()).append(">");
         System.out.print(sb.toString());
     }
 
@@ -44,7 +44,7 @@ public class Main {
     }
 
     static int pop() {
-        if(!isEmpty()){
+        if (!isEmpty()) {
             head = (++head) % size;
             return q[head];
         } else return -1;
