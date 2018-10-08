@@ -20,7 +20,7 @@ public class Main {
         String[] temp = br.readLine().split(" ");
         int n = Integer.parseInt(temp[0]);
 
-        for (int i = 1; i < n + 1; i++) deque.add(i);
+        init(deque, n);
 
         int ans = 0;
         temp = br.readLine().split(" ");
@@ -28,26 +28,50 @@ public class Main {
         for (String str : temp) {
             int value = Integer.parseInt(str);
 
-            int left = 0;
-
-            for (Integer i : deque) {
-                left++;
-                if (value == i) break;
-            }
-
+            int left = findIndex(deque, value);
             int right = deque.size() - left + 1;
 
-            if (left <= right) {
-                ans += --left;
-                while (left-- > 0) deque.addLast(deque.pollFirst());
-                deque.pollFirst();
-            } else {
-                ans += right;
-                while (right-- > 0) deque.addFirst(deque.pollLast());
-                deque.pollFirst();
-            }
+            if (left <= right) ans += shiftLeft(deque, left);
+            else ans += shiftRight(deque, right);
         }
 
         System.out.println(ans);
+    }
+
+    public static void init(final Deque<Integer> deque, int size) {
+        for (int i = 1; i <= size; i++) deque.add(i);
+    }
+
+    public static int findIndex(final Deque<Integer> deque, int value) {
+        int index = 0;
+
+        for (Integer i : deque) {
+            index++;
+            if (value == i) break;
+        }
+
+        return index;
+    }
+
+    public static int drop(final Deque<Integer> deque) {
+        return deque.pollFirst();
+    }
+
+    public static int shiftLeft(final Deque<Integer> deque, int left) {
+        int count = --left;
+
+        while (left-- > 0) deque.addLast(deque.pollFirst());
+        drop(deque);
+
+        return count;
+    }
+
+    public static int shiftRight(final Deque<Integer> deque, int right) {
+        int count = right;
+
+        while (right-- > 0) deque.addFirst(deque.pollLast());
+        drop(deque);
+
+        return count;
     }
 }

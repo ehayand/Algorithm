@@ -54,7 +54,7 @@ public class Main {
             sb.append(i).append("\n");
         }
 
-        System.out.print(sb);
+        System.out.print(sb.toString());
     }
 
     static void dfs(int x, int y) {
