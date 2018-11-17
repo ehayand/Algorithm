@@ -1,4 +1,4 @@
-package problem02579;
+package problem02579_계단_오르기;
 
 import java.io.BufferedReader;
 import java.io.IOException;
