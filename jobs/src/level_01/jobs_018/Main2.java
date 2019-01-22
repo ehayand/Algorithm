@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
  * Blog : http://ehay.tistory.com
  * Github : http://github.com/ehayand
  */
+
 public class Main2 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

@@ -1,24 +1,23 @@
-package level_01.jobs_017;
+package level_01.jobs_021;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 /**
- * Created by ehay@naver.com on 2019-01-21
+ * Created by ehay@naver.com on 2019-01-22
  * Blog : http://ehay.tistory.com
  * Github : http://github.com/ehayand
  */
-
 public class Main2 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder sb = new StringBuilder();
-        int n = Integer.parseInt(br.readLine());
+        int m = Integer.parseInt(br.readLine());
+        int sum = 0;
+        int i = 1;
 
-        int value = 1;
+        while(sum < m)
+            sum += i++;
 
-        while (value * value++ < n) ;
-
-        System.out.println(--value);
+        System.out.println(--i);
     }
 }
