@@ -16,7 +16,7 @@ public class Main2 {
         String[] temp;
 
         final int n = 5;
-        int arr[][] = new int[n][n];
+        int[][] arr = new int[n][n];
 
         for (int i = 0; i < n; i++) {
             temp = br.readLine().split(" ");

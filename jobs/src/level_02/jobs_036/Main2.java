@@ -15,7 +15,7 @@ public class Main2 {
         StringBuilder sb = new StringBuilder();
 
         int n = Integer.parseInt(br.readLine());
-        int arr[][] = new int[n][n];
+        int[][] arr = new int[n][n];
         int num = 1;
 
         for (int i = 0; i < n; i++) {
