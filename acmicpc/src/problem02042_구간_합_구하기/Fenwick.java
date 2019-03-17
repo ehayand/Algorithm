@@ -53,6 +53,10 @@ public class Fenwick {
         System.out.print(sb.toString());
     }
 
+    public static long query(int queryL, int queryR) {
+        return query(queryR) - query(queryL - 1);
+    }
+
     public static long query(int index) {
         long sum = 0;
         while (index > 0) {
@@ -60,10 +64,6 @@ public class Fenwick {
             index -= (index & (-index));
         }
         return sum;
-    }
-
-    public static long query(int queryL, int queryR) {
-        return query(queryR) - query(queryL - 1);
     }
 
     public static void update(int index, long value) {
