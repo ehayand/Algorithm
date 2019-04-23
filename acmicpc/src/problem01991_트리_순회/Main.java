@@ -14,13 +14,14 @@ import java.util.List;
 
 public class Main {
 
-    static List<Node> tree = new ArrayList<>();
+    static List<Node> tree;
     static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int n = Integer.parseInt(br.readLine());
+        tree = new ArrayList<>(n);
 
         for (int i = 0; i < n; i++) tree.add(null);
 
@@ -45,13 +46,13 @@ public class Main {
     //전위 순회
     static void preorder(String str) {
         if (".".equals(str)) return;
-
-        sb.append(str);
+        if (str == null) return;
 
         int node = str.charAt(0) - 65;
         String left = tree.get(node).left;
         String right = tree.get(node).right;
 
+        sb.append(str);
         preorder(left);
         preorder(right);
     }
